@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:food_delivery_app/Screens/fav_screen.dart';
+import 'package:food_delivery_app/Screens/home_screen.dart';
+import 'package:food_delivery_app/Splash_Screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'Screens/history_scrren.dart';
+import 'Screens/profile_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home:  Splash_Screen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+PageController controller = PageController();
+  List screens = [
+    Home_Screen(),
+    Fav_Screen(),
+    Profile_Screen(),
+    History_Screen(),
+  ];
+   int index = 0;
+
+   void updateIndex(int value){
+     index = value;
+     setState(() {
+
+     });
+   }
+  @override
+  Widget build(BuildContext context) {
+  return Scaffold(
+
+
+    backgroundColor:Colors.white ,
+    body: PageView(
+      onPageChanged:(value){
+        updateIndex(value);
+      },
+      children: [
+          screens[index],
+      ]
+    ),
+    bottomNavigationBar: BottomNavigationBar(
+      onTap: updateIndex,
+      backgroundColor: Colors.white,
+      items: [
+        BottomNavigationBarItem(icon: index == 0 ?FaIcon(FontAwesomeIcons.house ,color: Color(0xffFA4A0C) ) :FaIcon(FontAwesomeIcons.house ,color: Colors.grey ), label: ""),
+        BottomNavigationBarItem(icon: index == 1 ?FaIcon(FontAwesomeIcons.solidHeart,color: Color(0xffFA4A0C)) :FaIcon(FontAwesomeIcons.heart,color: Colors.grey), label: ""),
+        BottomNavigationBarItem(icon: index== 2 ? FaIcon(FontAwesomeIcons.solidUser,color: Color(0xffFA4A0C)) : FaIcon(FontAwesomeIcons.user,color: Colors.grey), label: ""),
+        BottomNavigationBarItem(icon: index == 3 ?FaIcon(FontAwesomeIcons.history,color: Color(0xffFA4A0C)) :FaIcon(FontAwesomeIcons.history,color: Colors.grey), label: ""),
+      ],
+    )
+  );
+  }
+}
