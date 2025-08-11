@@ -11,7 +11,7 @@ import 'Screens/profile_screen.dart';
 void main() {
   runApp(
     ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(360, 640),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
