@@ -112,6 +112,18 @@ class Home_Screen_State extends State<Home_Screen> {
               ),
             ),
             SizedBox(height: 20.h),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 220.w,
+                    height: 270.h,
+
+                    child: Stack(children: []),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
