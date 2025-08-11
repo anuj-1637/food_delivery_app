@@ -45,7 +45,7 @@ class Home_Screen_State extends State<Home_Screen> {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
       body: Padding(
         padding: EdgeInsets.only(left: 30.w, top: 15.w),
         child: Column(
@@ -111,19 +111,24 @@ class Home_Screen_State extends State<Home_Screen> {
                 ),
               ),
             ),
-            SizedBox(height: 20.h),
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 220.w,
-                    height: 270.h,
-
-                    child: Stack(children: []),
-                  );
-                },
-              ),
-            ),
+            SizedBox(height: 10.h),
+            // Expanded(
+            //   child: ListView.builder(
+            //     itemCount: 10,
+            //     scrollDirection: Axis.horizontal,
+            //     itemBuilder: (context, index) {
+            //       return Card(
+            //         elevation: 10,
+            //         child: Container(
+            //           width: 220.w,
+            //           height: 270.h,
+            //
+            //           child: Stack(children: []),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
