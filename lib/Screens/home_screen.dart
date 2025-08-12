@@ -113,27 +113,40 @@ class Home_Screen_State extends State<Home_Screen> {
                 ),
               ),
             ),
-            SizedBox(height: 70.h),
+            SizedBox(height: 30.h),
+
             SizedBox(
-              height: 190.h,
+              height: 180.h,
               child: ListView.separated(
+                clipBehavior: Clip.none,
                 itemCount: 10,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Container(
-                      width: 220.w,
-                      height: 190.h,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.r),
+                  return Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: Container(
+                          width: 200.w,
+                          height: 180.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                          child: Text('heelo'),
+                        ),
                       ),
-                      child: Stack(children: []),
-                    ),
+                      Positioned(
+                        top: -40.h,
+                        left: 12.w,
+                        child: Image.asset("assets/images/Mask Group.png"),
+                        width: 194.16.w,
+                      ),
+                    ],
                   );
                 },
                 separatorBuilder: (context, index) {
