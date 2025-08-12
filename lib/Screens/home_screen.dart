@@ -98,13 +98,20 @@ class Home_Screen_State extends State<Home_Screen> {
                   itemCount: items.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Container(
-                      child: Text(
-                        "${items[index]}",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.bold,
+                    return InkWell(
+                      onTap: () {
+                        setState(() {
+                          controller.jumpToPage(index);
+                        });
+                      },
+                      child: Container(
+                        child: Text(
+                          "${items[index]}",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     );
