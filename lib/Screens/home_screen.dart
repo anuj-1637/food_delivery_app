@@ -102,13 +102,23 @@ class Home_Screen_State extends State<Home_Screen> {
                       onTap: () {
                         setState(() {
                           controller.jumpToPage(index);
+                          pageNumber = index;
                         });
                       },
                       child: Container(
+                        width: 130,
+
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: pageNumber == index ? Color(0xffFA4A0C) : null,
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
                         child: Text(
                           "${items[index]}",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: pageNumber == index
+                                ? Colors.white
+                                : Colors.grey,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
                           ),
@@ -122,7 +132,7 @@ class Home_Screen_State extends State<Home_Screen> {
                 ),
               ),
             ),
-            SizedBox(height: 30.h),
+            SizedBox(height: 40.h),
 
             SizedBox(
               height: 200.h,
