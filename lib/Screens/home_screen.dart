@@ -165,8 +165,8 @@ class Home_Screen_State extends State<Home_Screen> {
                       Positioned(
                         top: -40.h,
                         left: 12.w,
-                        child: Image.asset("assets/images/Mask Group.png"),
                         width: 194.16.w,
+                        child: Image.asset("assets/images/Mask Group.png"),
                       ),
                     ],
                   );
