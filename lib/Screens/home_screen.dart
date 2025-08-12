@@ -86,10 +86,12 @@ class Home_Screen_State extends State<Home_Screen> {
               ),
             ),
             SizedBox(height: 23.h),
-            Expanded(
+            SizedBox(
+              height: 50.h,
               child: Padding(
                 padding: EdgeInsets.only(left: 20.w),
                 child: ListView.builder(
+                  shrinkWrap: true,
                   itemCount: items.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
@@ -111,24 +113,34 @@ class Home_Screen_State extends State<Home_Screen> {
                 ),
               ),
             ),
-            SizedBox(height: 10.h),
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: 10,
-            //     scrollDirection: Axis.horizontal,
-            //     itemBuilder: (context, index) {
-            //       return Card(
-            //         elevation: 10,
-            //         child: Container(
-            //           width: 220.w,
-            //           height: 270.h,
-            //
-            //           child: Stack(children: []),
-            //         ),
-            //       );
-            //     },
-            //   ),
-            // ),
+            SizedBox(height: 70.h),
+            SizedBox(
+              height: 190.h,
+              child: ListView.separated(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Container(
+                      width: 220.w,
+                      height: 190.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Stack(children: []),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(width: 20.w);
+                },
+              ),
+            ),
           ],
         ),
       ),
