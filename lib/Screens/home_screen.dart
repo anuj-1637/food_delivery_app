@@ -137,7 +137,29 @@ class Home_Screen_State extends State<Home_Screen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20.r),
                           ),
-                          child: Text('heelo'),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 10.w, top: 120),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "    Veggie\ntomato mix",
+                                  style: TextStyle(
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  "N1,900",
+                                  style: TextStyle(
+                                    fontSize: 13.sp,
+                                    color: Color(0xffFA4A0C),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                       Positioned(
