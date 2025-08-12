@@ -10,6 +10,8 @@ class Home_Screen extends StatefulWidget {
 }
 
 class Home_Screen_State extends State<Home_Screen> {
+  PageController controller = PageController();
+  var pageNumber = 0;
   List items = [
     "Foods",
     "Drinks",
@@ -20,6 +22,7 @@ class Home_Screen_State extends State<Home_Screen> {
     "Desserts",
     "Beverages",
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,25 +93,24 @@ class Home_Screen_State extends State<Home_Screen> {
               height: 50.h,
               child: Padding(
                 padding: EdgeInsets.only(left: 20.w),
-                child: ListView.builder(
+                child: ListView.separated(
                   shrinkWrap: true,
                   itemCount: items.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "${items[index]}",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.bold,
-                          ),
+                    return Container(
+                      child: Text(
+                        "${items[index]}",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.bold,
                         ),
-                        SizedBox(width: 20.w),
-                      ],
+                      ),
                     );
+                  },
+                  separatorBuilder: (context, index) {
+                    return SizedBox(width: 20.w);
                   },
                 ),
               ),
@@ -116,63 +118,84 @@ class Home_Screen_State extends State<Home_Screen> {
             SizedBox(height: 30.h),
 
             SizedBox(
-              height: 180.h,
-              child: ListView.separated(
+              height: 200.h,
+              child: PageView.builder(
+                controller: controller,
                 clipBehavior: Clip.none,
-                itemCount: 10,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Card(
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: Container(
-                          width: 200.w,
-                          height: 180.h,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20.r),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10.w, top: 120),
-                            child: Column(
-                              children: [
-                                Text(
-                                  "    Veggie\ntomato mix",
-                                  style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(height: 20),
-                                Text(
-                                  "N1,900",
-                                  style: TextStyle(
-                                    fontSize: 13.sp,
-                                    color: Color(0xffFA4A0C),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: -40.h,
-                        left: 12.w,
-                        width: 194.16.w,
-                        child: Image.asset("assets/images/Mask Group.png"),
-                      ),
-                    ],
-                  );
+                itemCount: items.length,
+                onPageChanged: (value) {
+                  setState(() {
+                    pageNumber = value;
+                  });
                 },
-                separatorBuilder: (context, index) {
-                  return SizedBox(width: 20.w);
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    height: 180.h,
+                    child: ListView.separated(
+                      clipBehavior: Clip.none,
+                      itemCount: 10,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              elevation: 10,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.r),
+                              ),
+                              child: Container(
+                                width: 200.w,
+                                height: 180.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20.r),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 10.w,
+                                    top: 120,
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "    Veggie\ntomato mix",
+                                        style: TextStyle(
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(height: 20),
+                                      Text(
+                                        "N1,900",
+                                        style: TextStyle(
+                                          fontSize: 13.sp,
+                                          color: Color(0xffFA4A0C),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40.h,
+                              left: 12.w,
+                              width: 194.16.w,
+                              child: Image.asset(
+                                "assets/images/Mask Group.png",
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(width: 20.w);
+                      },
+                    ),
+                  );
                 },
               ),
             ),
