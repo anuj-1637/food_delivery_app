@@ -27,7 +27,7 @@ class Home_Screen_State extends State<Home_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
         leadingWidth: 60.w,
         leading: Padding(
           padding: EdgeInsets.only(left: 20.w),
@@ -183,7 +183,7 @@ class Home_Screen_State extends State<Home_Screen> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 20.h),
                                       Text(
                                         "N1,900",
                                         style: TextStyle(

@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          elevation: 0,
+          backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
+        ),
       ),
       home: Splash_Screen(),
       debugShowCheckedModeBanner: false,
@@ -69,8 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [screens[index]],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
         onTap: updateIndex,
-        backgroundColor: Colors.white,
+        elevation: 0,
+        backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: index == 0
