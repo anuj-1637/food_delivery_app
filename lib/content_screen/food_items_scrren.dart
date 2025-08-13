@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Food_Items_Screen extends StatefulWidget {
   @override
@@ -11,7 +12,12 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
     return Scaffold(
       appBar: AppBar(backgroundColor: Color.fromRGBO(142, 142, 142, 0.1)),
       backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
-      body: Column(children: [Image.asset("assets/images/Mask Group.png")]),
+      body: Column(
+        children: [
+          Image.asset("assets/images/Mask Group.png", width: 200.w),
+          Text("heelo"),
+        ],
+      ),
     );
   }
 }
