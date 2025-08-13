@@ -40,6 +40,40 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
               ),
             ),
           ),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: Text(
+              "Delivery info",
+              style: TextStyle(fontSize: 19.sp, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: Text(
+              "Delivered between monday aug and\nthursday 20 from 8pm to 91:32 pm",
+              style: TextStyle(color: Colors.grey, fontSize: 16.sp),
+            ),
+          ),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: Text(
+              "Return policy",
+              style: TextStyle(fontSize: 19.sp, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: Text(
+              "All our foods are double checked before\nleaving our stores so by any case you\nfound a broken food please contact our\nhotline immediately.",
+              style: TextStyle(color: Colors.grey, fontSize: 16.sp),
+            ),
+          ),
+          SizedBox(height: 10),
+          ElevatedButton(onPressed: () {}, child: Text('')),
         ],
       ),
     );
