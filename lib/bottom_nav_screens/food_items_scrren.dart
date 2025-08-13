@@ -29,6 +29,17 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(left: 120.h, top: 10.h),
+            child: Text(
+              "N1,900",
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+                color: Color(0xffFA4A0C),
+              ),
+            ),
+          ),
         ],
       ),
     );
