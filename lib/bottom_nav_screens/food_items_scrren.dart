@@ -72,8 +72,27 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
               style: TextStyle(color: Colors.grey, fontSize: 16.sp),
             ),
           ),
-          SizedBox(height: 10),
-          ElevatedButton(onPressed: () {}, child: Text('')),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: SizedBox(
+              width: 314.w,
+              height: 50.h,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xffFA4A0C)),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+                onPressed: () {},
+                child: Text('ADD TO CART', style: TextStyle(fontSize: 17.sp)),
+              ),
+            ),
+          ),
         ],
       ),
     );
