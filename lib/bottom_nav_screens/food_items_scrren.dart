@@ -11,18 +11,25 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.only(top: 50.h, left: 20.h),
-        child: Column(
-          children: [
-            Image.asset("assets/images/Mask Group.png", width: 300.w),
-
-            Text(
-              "Hei",
-              style: TextStyle(color: Colors.white, fontSize: 20.sp),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 50.h, left: 20.h),
+            child: Image.asset("assets/images/Mask Group.png", width: 300.w),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 70.h),
+            child: Text(
+              "Veggie tomato mix",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
