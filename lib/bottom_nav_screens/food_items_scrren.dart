@@ -10,13 +10,19 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color.fromRGBO(142, 142, 142, 0.1)),
-      backgroundColor: Color.fromRGBO(142, 142, 142, 0.1),
-      body: Column(
-        children: [
-          Image.asset("assets/images/Mask Group.png", width: 200.w),
-          Text("heelo"),
-        ],
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(top: 50.h, left: 20.h),
+        child: Column(
+          children: [
+            Image.asset("assets/images/Mask Group.png", width: 300.w),
+
+            Text(
+              "Hei",
+              style: TextStyle(color: Colors.white, fontSize: 20.sp),
+            ),
+          ],
+        ),
       ),
     );
   }
