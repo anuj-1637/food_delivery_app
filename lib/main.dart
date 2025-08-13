@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_delivery_app/Screens/fav_screen.dart';
-import 'package:food_delivery_app/Screens/home_screen.dart';
 import 'package:food_delivery_app/Splash_Screen.dart';
+import 'package:food_delivery_app/bottom_nav_screens/fav_screen.dart';
+import 'package:food_delivery_app/bottom_nav_screens/home_screen.dart';
 
-import 'Screens/history_scrren.dart';
-import 'Screens/profile_screen.dart';
+import 'bottom_nav_screens/history_scrren.dart';
+import 'bottom_nav_screens/profile_screen.dart';
 
 void main() {
   runApp(
     ScreenUtilInit(
-      designSize: const Size(360, 640),
+      designSize: Size(360, 640),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
