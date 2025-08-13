@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_delivery_app/Screens/profile_screen.dart';
+
+import '../content_screen/food_items_scrren.dart';
 
 class Home_Screen extends StatefulWidget {
   @override
@@ -160,7 +161,7 @@ class Home_Screen_State extends State<Home_Screen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Profile_Screen(),
+                                builder: (context) => Food_Items_Screen(),
                               ),
                             );
                           },
