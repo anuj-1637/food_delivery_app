@@ -53,7 +53,7 @@ class Home_Screen_State extends State<Home_Screen> {
   ];
   List<Map<String, dynamic>> snacksItems = [
     {
-      "foodImg": "assets/images/drink_2.jpg",
+      "foodImg": "assets/images/snacks_1.jpg",
       "foodName": "Stuffed Mushroom Caps",
       "foodPrice": "N1,900",
     },
