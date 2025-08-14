@@ -14,16 +14,7 @@ class Home_Screen_State extends State<Home_Screen> {
   PageController controller = PageController();
   var pageNumber = 0;
   late List img;
-  List items = [
-    "Foods",
-    "Drinks",
-    "Snacks",
-    "Desserts",
-    "Beverages",
-    "Snacks",
-    "Desserts",
-    "Beverages",
-  ];
+  List items = ["Foods", "Drinks", "Snacks", "Desserts"];
 
   List<Map<String, dynamic>> foodItems = [
     {
@@ -33,17 +24,17 @@ class Home_Screen_State extends State<Home_Screen> {
     },
     {
       "foodImg": "assets/images/Mask Group (1).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Lobster Thermidor",
       "foodPrice": "N2,300",
     },
     {
       "foodImg": "assets/images/Mask Group (2).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Wellington",
       "foodPrice": "N1,00",
     },
     {
       "foodImg": "assets/images/Mask Group (3).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Moroccan Lamb Tagine",
       "foodPrice": "N1,900",
     },
   ];
@@ -51,24 +42,24 @@ class Home_Screen_State extends State<Home_Screen> {
   List<Map<String, dynamic>> drinkItems = [
     {
       "foodImg": "assets/images/drink_1.jpg",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Virgin Mojito",
       "foodPrice": "N1,900",
     },
     {
       "foodImg": "assets/images/Mask Group (2).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Blue Lagoon Mocktail",
       "foodPrice": "N2,300",
     },
   ];
   List<Map<String, dynamic>> snacksItems = [
     {
       "foodImg": "assets/images/drink_1.jpg",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Stuffed Mushroom Caps",
       "foodPrice": "N1,900",
     },
     {
       "foodImg": "assets/images/Mask Group (2).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Prawn Tempura",
       "foodPrice": "N2,300",
     },
   ];
@@ -76,12 +67,12 @@ class Home_Screen_State extends State<Home_Screen> {
   List<Map<String, dynamic>> dessertsItems = [
     {
       "foodImg": "assets/images/drink_1.jpg",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Tiramisu",
       "foodPrice": "N1,900",
     },
     {
       "foodImg": "assets/images/Mask Group (2).png",
-      "foodName": "Veggie tomato mix",
+      "foodName": "Crème Brûlée",
       "foodPrice": "N2,300",
     },
   ];
