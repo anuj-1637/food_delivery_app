@@ -41,7 +41,7 @@ class Home_Screen_State extends State<Home_Screen> {
 
   List<Map<String, dynamic>> drinkItems = [
     {
-      "foodImg": "assets/images/drink_1.jpg",
+      "foodImg": "assets/images/drink_2.jpg",
       "foodName": "Virgin Mojito",
       "foodPrice": "N1,900",
     },
@@ -53,7 +53,7 @@ class Home_Screen_State extends State<Home_Screen> {
   ];
   List<Map<String, dynamic>> snacksItems = [
     {
-      "foodImg": "assets/images/drink_1.jpg",
+      "foodImg": "assets/images/drink_2.jpg",
       "foodName": "Stuffed Mushroom Caps",
       "foodPrice": "N1,900",
     },
@@ -66,7 +66,7 @@ class Home_Screen_State extends State<Home_Screen> {
 
   List<Map<String, dynamic>> dessertsItems = [
     {
-      "foodImg": "assets/images/drink_1.jpg",
+      "foodImg": "assets/images/drink_2.jpg",
       "foodName": "Tiramisu",
       "foodPrice": "N1,900",
     },
@@ -204,11 +204,21 @@ class Home_Screen_State extends State<Home_Screen> {
                   if (index == 0) {
                     return foodCard(foodItems: foodItems);
                   } else if (index == 1) {
-                    return foodCard(foodItems: drinkItems, width: 150);
+                    return foodCard(
+                      foodItems: drinkItems,
+                      width: 140,
+                      left: 40,
+                      isFood: true,
+                    );
                   } else if (index == 2) {
                     return foodCard(foodItems: snacksItems);
                   } else if (index == 3) {
-                    return foodCard(foodItems: dessertsItems);
+                    return foodCard(
+                      foodItems: dessertsItems,
+                      width: 140,
+                      isFood: true,
+                      left: 40,
+                    );
                   }
                 },
               ),

@@ -6,7 +6,16 @@ import '../bottom_nav_screens/food_items_scrren.dart';
 class foodCard extends StatelessWidget {
   late List<Map<String, dynamic>> foodItems;
   late double width;
-  foodCard({required this.foodItems, this.width = 194.16});
+  late double top;
+  late double left;
+  late bool isFood;
+  foodCard({
+    required this.foodItems,
+    this.width = 194.16,
+    this.top = -40,
+    this.left = 12,
+    this.isFood = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,10 +74,18 @@ class foodCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: -40.h,
-                  left: 12.w,
+                  top: top.h,
+                  left: left.w,
                   width: width.w,
-                  child: Image.asset(foodItems[index]['foodImg']),
+
+                  child: isFood
+                      ? CircleAvatar(
+                          radius: 70.r,
+                          backgroundImage: AssetImage(
+                            foodItems[index]['foodImg'],
+                          ),
+                        )
+                      : Image.asset(foodItems[index]['foodImg']),
                 ),
               ],
             ),
