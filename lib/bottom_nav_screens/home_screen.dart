@@ -58,7 +58,7 @@ class Home_Screen_State extends State<Home_Screen> {
       "foodPrice": "N1,900",
     },
     {
-      "foodImg": "assets/images/Mask Group (2).png",
+      "foodImg": "assets/images/snack_2.jpg",
       "foodName": "Prawn Tempura",
       "foodPrice": "N2,300",
     },
