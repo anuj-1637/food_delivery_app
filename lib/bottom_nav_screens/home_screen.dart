@@ -211,7 +211,12 @@ class Home_Screen_State extends State<Home_Screen> {
                       isFood: true,
                     );
                   } else if (index == 2) {
-                    return foodCard(foodItems: snacksItems, width: 120);
+                    return foodCard(
+                      foodItems: snacksItems,
+                      width: 120,
+                      isFood: true,
+                      left: 40,
+                    );
                   } else if (index == 3) {
                     return foodCard(
                       foodItems: dessertsItems,
