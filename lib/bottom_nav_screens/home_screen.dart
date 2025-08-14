@@ -48,6 +48,19 @@ class Home_Screen_State extends State<Home_Screen> {
     },
   ];
 
+  List<Map<String, dynamic>> drinkItems = [
+    {
+      "foodImg": "assets/images/drink_1.jpg",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,900",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (2).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N2,300",
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,6 +187,8 @@ class Home_Screen_State extends State<Home_Screen> {
                 itemBuilder: (context, index) {
                   if (index == 0) {
                     return foodCard(foodItems: foodItems);
+                  } else if (index == 1) {
+                    return foodCard(foodItems: drinkItems);
                   }
                 },
               ),

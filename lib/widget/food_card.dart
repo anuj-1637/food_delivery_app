@@ -4,18 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../bottom_nav_screens/food_items_scrren.dart';
 
 class foodCard extends StatelessWidget {
-  // List foodImg = [
-  //   "assets/images/Mask Group.png",
-  //   "assets/images/Mask Group (1).png",
-  //   "assets/images/Mask Group (2).png",
-  //   "assets/images/Mask Group (3).png",
-  // ];
-  // List drinkImg = [
-  //   "assets/images/img.png",
-  //   "assets/images/Mask Group (2).png",
-  //   "assets/images/Mask Group (3).png",
-  // ];
-
   late List<Map<String, dynamic>> foodItems;
   foodCard({required this.foodItems});
 
