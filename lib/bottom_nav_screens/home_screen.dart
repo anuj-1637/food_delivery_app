@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'food_items_scrren.dart';
+import 'package:food_delivery_app/widget/food_card.dart';
 
 class Home_Screen extends StatefulWidget {
   @override
@@ -26,16 +25,27 @@ class Home_Screen_State extends State<Home_Screen> {
     "Beverages",
   ];
 
-  List foodImg = [
-    "assets/images/Mask Group.png",
-    "assets/images/Mask Group (1).png",
-    "assets/images/Mask Group (2).png",
-    "assets/images/Mask Group (3).png",
-  ];
-  List drinkImg = [
-    "assets/images/img.png",
-    "assets/images/Mask Group (2).png",
-    "assets/images/Mask Group (3).png",
+  List<Map<String, dynamic>> foodItems = [
+    {
+      "foodImg": "assets/images/Mask Group.png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,900",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (1).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N2,300",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (2).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,00",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (3).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,900",
+    },
   ];
 
   @override
@@ -162,87 +172,9 @@ class Home_Screen_State extends State<Home_Screen> {
                   });
                 },
                 itemBuilder: (context, index) {
-                  if (items == "Foods") {
-                    img = foodImg.map((e) => e = foodImg).toList();
-                  } else if (items == "Drinks") {
-                    img = foodImg.map((e) => e = foodImg).toList();
-                  } else if (items == "Snacks") {
-                    img = foodImg.map((e) => e = foodImg).toList();
+                  if (index == 0) {
+                    return foodCard(foodItems: foodItems);
                   }
-                  return SizedBox(
-                    height: 180.h,
-                    child: ListView.separated(
-                      clipBehavior: Clip.none,
-                      itemCount: foodImg.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Food_Items_Screen(),
-                              ),
-                            );
-                          },
-                          child: Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                              Card(
-                                elevation: 10,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.r),
-                                ),
-                                child: Container(
-                                  width: 200.w,
-                                  height: 180.h,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20.r),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 10.w,
-                                      top: 120,
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "    Veggie\ntomato mix",
-                                          style: TextStyle(
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        SizedBox(height: 20.h),
-                                        Text(
-                                          "N1,900",
-                                          style: TextStyle(
-                                            fontSize: 13.sp,
-                                            color: Color(0xffFA4A0C),
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                top: -40.h,
-                                left: 12.w,
-                                width: 194.16.w,
-                                child: Image.asset(img[index]),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                      separatorBuilder: (context, index) {
-                        return SizedBox(width: 20.w);
-                      },
-                    ),
-                  );
                 },
               ),
             ),
