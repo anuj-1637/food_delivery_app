@@ -25,6 +25,13 @@ class Home_Screen_State extends State<Home_Screen> {
     "Beverages",
   ];
 
+  List foodImg = [
+    "assets/images/Mask Group.png",
+    "assets/images/Mask Group (1).png",
+    "assets/images/Mask Group (2).png",
+    "assets/images/Mask Group (3).png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,7 +160,7 @@ class Home_Screen_State extends State<Home_Screen> {
                     height: 180.h,
                     child: ListView.separated(
                       clipBehavior: Clip.none,
-                      itemCount: 10,
+                      itemCount: foodImg.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return InkWell(
@@ -212,9 +219,7 @@ class Home_Screen_State extends State<Home_Screen> {
                                 top: -40.h,
                                 left: 12.w,
                                 width: 194.16.w,
-                                child: Image.asset(
-                                  "assets/images/Mask Group.png",
-                                ),
+                                child: Image.asset("${foodImg[index]}"),
                               ),
                             ],
                           ),
