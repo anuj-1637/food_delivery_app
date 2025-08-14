@@ -14,6 +14,7 @@ class Home_Screen extends StatefulWidget {
 class Home_Screen_State extends State<Home_Screen> {
   PageController controller = PageController();
   var pageNumber = 0;
+  late List img;
   List items = [
     "Foods",
     "Drinks",
@@ -28,6 +29,11 @@ class Home_Screen_State extends State<Home_Screen> {
   List foodImg = [
     "assets/images/Mask Group.png",
     "assets/images/Mask Group (1).png",
+    "assets/images/Mask Group (2).png",
+    "assets/images/Mask Group (3).png",
+  ];
+  List drinkImg = [
+    "assets/images/img.png",
     "assets/images/Mask Group (2).png",
     "assets/images/Mask Group (3).png",
   ];
@@ -156,6 +162,13 @@ class Home_Screen_State extends State<Home_Screen> {
                   });
                 },
                 itemBuilder: (context, index) {
+                  if (items == "Foods") {
+                    img = foodImg.map((e) => e = foodImg).toList();
+                  } else if (items == "Drinks") {
+                    img = foodImg.map((e) => e = foodImg).toList();
+                  } else if (items == "Snacks") {
+                    img = foodImg.map((e) => e = foodImg).toList();
+                  }
                   return SizedBox(
                     height: 180.h,
                     child: ListView.separated(
@@ -219,7 +232,7 @@ class Home_Screen_State extends State<Home_Screen> {
                                 top: -40.h,
                                 left: 12.w,
                                 width: 194.16.w,
-                                child: Image.asset("${foodImg[index]}"),
+                                child: Image.asset(img[index]),
                               ),
                             ],
                           ),
