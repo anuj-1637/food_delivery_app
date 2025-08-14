@@ -60,6 +60,31 @@ class Home_Screen_State extends State<Home_Screen> {
       "foodPrice": "N2,300",
     },
   ];
+  List<Map<String, dynamic>> snacksItems = [
+    {
+      "foodImg": "assets/images/drink_1.jpg",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,900",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (2).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N2,300",
+    },
+  ];
+
+  List<Map<String, dynamic>> dessertsItems = [
+    {
+      "foodImg": "assets/images/drink_1.jpg",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N1,900",
+    },
+    {
+      "foodImg": "assets/images/Mask Group (2).png",
+      "foodName": "Veggie tomato mix",
+      "foodPrice": "N2,300",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +213,11 @@ class Home_Screen_State extends State<Home_Screen> {
                   if (index == 0) {
                     return foodCard(foodItems: foodItems);
                   } else if (index == 1) {
-                    return foodCard(foodItems: drinkItems);
+                    return foodCard(foodItems: drinkItems, width: 150);
+                  } else if (index == 2) {
+                    return foodCard(foodItems: snacksItems);
+                  } else if (index == 3) {
+                    return foodCard(foodItems: dessertsItems);
                   }
                 },
               ),
