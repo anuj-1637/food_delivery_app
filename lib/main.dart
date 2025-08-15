@@ -4,8 +4,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_delivery_app/Splash_Screen.dart';
 import 'package:food_delivery_app/bottom_nav_screens/fav_screen.dart';
 import 'package:food_delivery_app/bottom_nav_screens/home_screen.dart';
-import "package:hive/hive.dart";
+import 'package:food_delivery_app/model/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
+
 // import 'package:provider/provider.dart';
 // import 'package:path_provider/path_provider.dart';
 
@@ -22,16 +24,30 @@ void main() async {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MyApp();
+        return ChangeNotifierProvider(
+          create: (context) => databaseProvider(),
+          child: MyApp(),
+        );
       },
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    Hive.openBox('foodDataBox');
+    context.read<databaseProvider>().init();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

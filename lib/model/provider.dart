@@ -6,28 +6,33 @@ class databaseProvider extends ChangeNotifier {
   List get data => _data;
   var box = Hive.box('foodDataBox');
 
-  addData(value) {
-    box.add(value);
+  addData(value) async {
+    await box.add(value);
     getData();
     notifyListeners();
   }
 
-  getData() {
-    _data = box.keys.map((e) {
+  getData() async {
+    _data = await box.keys.map((e) {
       var temp = box.get(e);
       return {'key': e};
     }).toList();
     notifyListeners();
   }
 
-  updateData(key, value) {
-    box.put(key, value);
+  updateData(key, value) async {
+    await box.put(key, value);
     getData();
     notifyListeners();
   }
 
-  deleteData(key) {
-    box.delete(key);
+  deleteData(key) async {
+    await box.delete(key);
+    getData();
+    notifyListeners();
+  }
+
+  init() {
     getData();
     notifyListeners();
   }
