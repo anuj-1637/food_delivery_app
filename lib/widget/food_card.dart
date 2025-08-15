@@ -9,14 +9,14 @@ class foodCard extends StatelessWidget {
   late double top;
   late double left;
   late bool isFood;
-  late List img;
+  late List<Map<String, dynamic>> items;
   foodCard({
     required this.foodItems,
     this.width = 194.16,
     this.top = -40,
     this.left = 12,
     this.isFood = false,
-    required this.img,
+    required this.items,
   });
 
   @override
@@ -32,7 +32,9 @@ class foodCard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Food_Items_Screen()),
+                MaterialPageRoute(
+                  builder: (context) => Food_Items_Screen(foodItems: foodItems),
+                ),
               );
             },
             child: Stack(
