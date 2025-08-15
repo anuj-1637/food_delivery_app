@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delivery_app/model/provider.dart';
+import 'package:provider/provider.dart';
 
 class Food_Items_Screen extends StatefulWidget {
   late List<Map<String, dynamic>> Items;
@@ -141,7 +143,11 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Map m = {"img ": widget.Items[widget.ind]['foodImg']};
+
+                  context.read<databaseProvider>().addData(m);
+                },
                 child: Text('ADD TO CART', style: TextStyle(fontSize: 17.sp)),
               ),
             ),
