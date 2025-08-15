@@ -9,12 +9,14 @@ class foodCard extends StatelessWidget {
   late double top;
   late double left;
   late bool isFood;
+  late List img;
   foodCard({
     required this.foodItems,
     this.width = 194.16,
     this.top = -40,
     this.left = 12,
     this.isFood = false,
+    required this.img,
   });
 
   @override

@@ -202,13 +202,14 @@ class Home_Screen_State extends State<Home_Screen> {
                 },
                 itemBuilder: (context, index) {
                   if (index == 0) {
-                    return foodCard(foodItems: foodItems);
+                    return foodCard(foodItems: foodItems, img: foodItems);
                   } else if (index == 1) {
                     return foodCard(
                       foodItems: drinkItems,
                       width: 140,
                       left: 40,
                       isFood: true,
+                      img: drinkItems,
                     );
                   } else if (index == 2) {
                     return foodCard(
@@ -216,6 +217,7 @@ class Home_Screen_State extends State<Home_Screen> {
                       width: 120,
                       isFood: true,
                       left: 40,
+                      img: snacksItems,
                     );
                   } else if (index == 3) {
                     return foodCard(
@@ -223,6 +225,7 @@ class Home_Screen_State extends State<Home_Screen> {
                       width: 130,
                       isFood: true,
                       left: 40,
+                      img: dessertsItems,
                     );
                   }
                 },
