@@ -25,4 +25,10 @@ class databaseProvider extends ChangeNotifier {
     getData();
     notifyListeners();
   }
+
+  deleteData(key) {
+    box.delete(key);
+    getData();
+    notifyListeners();
+  }
 }
