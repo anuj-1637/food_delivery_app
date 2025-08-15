@@ -39,14 +39,48 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
           ),
           Padding(
             padding: EdgeInsets.only(left: 70.h),
-            child: Text(
-              "${widget.Items[widget.ind]['foodName']}",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
-              ),
-            ),
+            child: widget.listname == 'Drinks'
+                ? widget.Items[0]['foodName'] ==
+                          widget.Items[widget.ind]['foodName']
+                      ? Padding(
+                          padding: EdgeInsets.only(left: 28.w),
+                          child: Text(
+                            "${widget.Items[widget.ind]['foodName']}",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.sp,
+                            ),
+                          ),
+                        )
+                      : Text(
+                          "${widget.Items[widget.ind]['foodName']}",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.sp,
+                          ),
+                        )
+                : widget.listname == 'Desserts'
+                ? Padding(
+                    padding: EdgeInsets.only(left: 39.w, top: 14.h),
+                    child: Text(
+                      "${widget.Items[widget.ind]['foodName']}",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.sp,
+                      ),
+                    ),
+                  )
+                : Text(
+                    "${widget.Items[widget.ind]['foodName']}",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp,
+                    ),
+                  ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 120.h, top: 10.h),
