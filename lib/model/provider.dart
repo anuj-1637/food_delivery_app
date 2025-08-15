@@ -6,8 +6,16 @@ class databaseProvider extends ChangeNotifier {
   List get data => _data;
   var box = Hive.box('foodDataBox');
 
-  addData() {
-    _data = box.values.toList();
+  addData(value) {
+    box.add(value);
+    notifyListeners();
+  }
+
+  getData() {
+    _data = box.keys.map((e) {
+      var temp = box.get(e);
+      return {'key': e};
+    }).toList();
     notifyListeners();
   }
 }
