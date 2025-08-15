@@ -66,12 +66,12 @@ class Home_Screen_State extends State<Home_Screen> {
 
   List<Map<String, dynamic>> dessertsItems = [
     {
-      "foodImg": "assets/images/drink_2.jpg",
+      "foodImg": "assets/images/dessert_1.jpg",
       "foodName": "Tiramisu",
       "foodPrice": "N1,900",
     },
     {
-      "foodImg": "assets/images/Mask Group (2).png",
+      "foodImg": "assets/images/dessert_2.jpg",
       "foodName": "Crème Brûlée",
       "foodPrice": "N2,300",
     },
@@ -220,7 +220,7 @@ class Home_Screen_State extends State<Home_Screen> {
                   } else if (index == 3) {
                     return foodCard(
                       foodItems: dessertsItems,
-                      width: 140,
+                      width: 130,
                       isFood: true,
                       left: 40,
                     );
