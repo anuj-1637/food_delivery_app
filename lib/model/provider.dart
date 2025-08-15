@@ -8,6 +8,7 @@ class databaseProvider extends ChangeNotifier {
 
   addData(value) {
     box.add(value);
+    getData();
     notifyListeners();
   }
 
@@ -16,6 +17,12 @@ class databaseProvider extends ChangeNotifier {
       var temp = box.get(e);
       return {'key': e};
     }).toList();
+    notifyListeners();
+  }
+
+  updateData(key, value) {
+    box.put(key, value);
+    getData();
     notifyListeners();
   }
 }
