@@ -33,7 +33,7 @@ class foodCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Food_Items_Screen(foodItems: foodItems),
+                  builder: (context) => Food_Items_Screen(Items: items),
                 ),
               );
             },

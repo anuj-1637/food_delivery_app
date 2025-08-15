@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Food_Items_Screen extends StatefulWidget {
-  late List<Map<String, dynamic>> foodItems;
-  Food_Items_Screen({required this.foodItems});
+  late List<Map<String, dynamic>> Items;
+  Food_Items_Screen({required this.Items});
   @override
   State<StatefulWidget> createState() => _Food_Items_Screen();
 }
