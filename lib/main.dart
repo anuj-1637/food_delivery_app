@@ -4,10 +4,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_delivery_app/Splash_Screen.dart';
 import 'package:food_delivery_app/bottom_nav_screens/fav_screen.dart';
 import 'package:food_delivery_app/bottom_nav_screens/home_screen.dart';
-import 'package:hive/hive.dart';
+import "package:hive/hive.dart";
+import 'package:hive_flutter/hive_flutter.dart';
 // import 'package:provider/provider.dart';
 // import 'package:path_provider/path_provider.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 import 'bottom_nav_screens/history_scrren.dart';
 import 'bottom_nav_screens/profile_screen.dart';
