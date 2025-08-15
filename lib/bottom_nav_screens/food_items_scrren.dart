@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Food_Items_Screen extends StatefulWidget {
   late List<Map<String, dynamic>> Items;
-  Food_Items_Screen({required this.Items});
+  late var ind;
+  Food_Items_Screen({required this.Items, required this.ind});
   @override
   State<StatefulWidget> createState() => _Food_Items_Screen();
 }
@@ -18,12 +19,15 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 50.h, left: 20.h),
-            child: Image.asset("assets/images/Mask Group.png", width: 300.w),
+            child: Image.asset(
+              "${widget.Items[widget.ind]['foodImg']}",
+              width: 300.w,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 70.h),
             child: Text(
-              "Veggie tomato mix",
+              "${widget.Items[widget.ind]['foodName']}",
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -34,7 +38,7 @@ class _Food_Items_Screen extends State<Food_Items_Screen> {
           Padding(
             padding: EdgeInsets.only(left: 120.h, top: 10.h),
             child: Text(
-              "N1,900",
+              "${widget.Items[widget.ind]['foodPrice']}",
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
