@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/widget/food_card.dart';
 
+import '../content_screen/cart_screen.dart';
+
 class Home_Screen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -97,7 +99,12 @@ class Home_Screen_State extends State<Home_Screen> {
         actionsPadding: EdgeInsets.only(right: 20.w),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Cart_Screen()),
+              );
+            },
             icon: SvgPicture.asset("assets/svg/cart.svg", width: 25.w),
           ),
         ],
