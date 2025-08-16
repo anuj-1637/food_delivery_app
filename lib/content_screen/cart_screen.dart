@@ -38,67 +38,102 @@ class Cart_Screen_State extends State<Cart_Screen> {
             ),
             SizedBox(height: 20.h),
             SizedBox(
+              height: 500.h,
               width: 300.w,
-              height: 100.h,
-              child: Card(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                elevation: 5,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 16.w),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(width: 10.w),
-                      Image.asset(
-                        "assets/images/Mask Group.png",
-                        width: 100.w,
-                        height: 90.h,
-                        fit: BoxFit.cover,
+              child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    width: 300.w,
+                    height: 100.h,
+                    child: Card(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.r),
                       ),
-                      SizedBox(width: 6.w),
-                      Padding(
-                        padding: EdgeInsets.only(top: 12.w),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      elevation: 5,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 16.w),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              "Veggie tomato mix",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Sf Pro",
-                              ),
+                            SizedBox(width: 10.w),
+                            Image.asset(
+                              "assets/images/Mask Group.png",
+                              width: 100.w,
+                              height: 90.h,
+                              fit: BoxFit.cover,
                             ),
-                            SizedBox(height: 10.h),
-                            Text(
-                              "N1,900",
-                              style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Sf Pro",
-                                color: Color(0xffFA4A0C),
+                            SizedBox(width: 6.w),
+                            Padding(
+                              padding: EdgeInsets.only(top: 12.w),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Veggie tomato mix",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Sf Pro",
+                                    ),
+                                  ),
+                                  SizedBox(height: 4.h),
+                                  Text(
+                                    "N1,900",
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Sf Pro",
+                                      color: Color(0xffFA4A0C),
+                                    ),
+                                  ),
+                                  // SizedBox(height: 10.h),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 78.w),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Icon(Icons.minimize_sharp),
+                                        ),
+                                        SizedBox(width: 0.w),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 13.h),
+                                          child: Text(
+                                            "1",
+                                            style: TextStyle(
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: "Sf Pro",
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 4.w),
+                                          child: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(Icons.add),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                            // SizedBox(height: 10.h),
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.minimize),
-                                ),
-                                SizedBox(width: 10.w),
-                              ],
                             ),
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) => SizedBox(height: 10.h),
+                itemCount: 3,
               ),
             ),
           ],
