@@ -45,7 +45,9 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     Hive.openBox('foodDataBox');
-    context.read<databaseProvider>().init();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<databaseProvider>().init();
+    });
   }
 
   @override
@@ -90,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: PageView(
+        controller: controller,
         onPageChanged: (value) {
           updateIndex(value);
         },
